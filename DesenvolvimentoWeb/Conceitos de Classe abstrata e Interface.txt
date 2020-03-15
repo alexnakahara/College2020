@@ -1,0 +1,11 @@
+Classe abstrata
+Não pode ser instanciada, 
+Só pode ser extendida por outras classes n abstratas, e essas classes podem ser instanciadas.
+Os atributos e métodos são obrigatórios
+
+
+Interface
+Quando temos uma classe abstrata que não tenha atributos e só tenha metodos abstratos, pode-se fazer uma interface. Os atributos em uma interface são do tipo "public final" - isso se torna uma constante;
+
+Em uma interface todos os metodos são abstratos e publicos por padrão. Ele não deixa por escopo em um metodo.
+O conceito baseia-se no poder colocar varias caracteristicas abstratas em uma classe filha. Não é possivel extender n classes abstratas em uma unica classe, porém é possível implementar n interfaces em uma classe.
