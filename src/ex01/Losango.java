@@ -13,8 +13,8 @@ public class Losango extends Poligono {
 	}
 
 	@Override
-	double perimetro() {
-		return this.getBase() * 4;
+	public double perimetro() {
+		return Math.pow(this.getBase(), 4);
 	}
 	
 	public String toString() {

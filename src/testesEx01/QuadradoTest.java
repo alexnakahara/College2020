@@ -25,6 +25,11 @@ class QuadradoTest {
 	void testPerimetro() {
 		double resultado = quadrado.perimetro();
 		assertEquals(24, resultado);
+	} 
+	
+	void testDiagonal() {
+		double resultado = quadrado.calcularDiagonal();
+		assertEquals(20, resultado);
 	}
 	
 	@AfterEach

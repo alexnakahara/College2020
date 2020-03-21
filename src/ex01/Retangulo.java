@@ -1,4 +1,4 @@
-package ex01;
+ package ex01;
 
 public class Retangulo extends Poligono implements Diagonal {
 
@@ -17,7 +17,7 @@ public class Retangulo extends Poligono implements Diagonal {
 	}
 
 	@Override
-	double perimetro() {
+	public double perimetro() {
 		// TODO Auto-generated method stub
 		return (this.getAltura() * 2) + (this.getBase() * 2) ;
 	}

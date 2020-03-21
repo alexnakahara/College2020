@@ -6,32 +6,32 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ex01.Circulo;
+import ex01.Losango;
 
-class CirculoTeste {
+class LosanguloTeste {
 	
-	 Circulo circulo;
+	Losango losango;
 	
 	@BeforeEach
 	void preparar() {
-		circulo = new Circulo(10);
+		losango = new Losango(2, 10);
 	}
 
 	@Test
 	void testArea() {
-		double resultado = circulo.area();
-		assertEquals(314.1592653589793, resultado);
+		double resultado = losango.area();
+		assertEquals(20, resultado);
 	}
 	
 	void testPerimetro() {
-		double resultado = circulo.perimetro();
-		assertEquals(62.83, resultado);
+		double resultado = losango.perimetro();
+		assertEquals(40, resultado);
 	}
 	
 	@AfterEach
 	void clear() {
-		circulo.setRaio(0);
-		
+		losango.setAltura(0);
+		losango.setBase(0);
 	}
 
 }

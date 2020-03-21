@@ -8,7 +8,7 @@ public class GeometriaMain {
 
 		ArrayList<Figura> figuras = new ArrayList<Figura>();
 
-		figuras.add(new Circulo(3.1)); // raio somente
+		figuras.add(new Circulo(10.00)); // raio somente
 
 		figuras.add(new Losango(10, 10)); // altura e base
 
