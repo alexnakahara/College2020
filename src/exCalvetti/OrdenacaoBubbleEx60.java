@@ -27,16 +27,16 @@ public class OrdenacaoBubbleEx60 {
 	public static int[] BubbleSort(int vetor[]) {
 
 		int aux;
-		for (int i = 0; i < vetor.length; i++) {
+		for (int i = 1; i < vetor.length; i++) {
 			
-			// (vetor.length - 1) para garantir que nunca acesse um indice a mais que não tenha no vetor. (Acontece no if)
-			for(int j = 0; j < (vetor.length - 1); j++) {
+			for(int j = vetor.length - 1; j >= i; j--) {
 				
-				if (vetor[j] > vetor[j + 1]) {
+				if (vetor[j - 1] > vetor[j]) {
 					
-					aux = vetor[j];
-					vetor[j] = vetor[j + 1];
-					vetor[j + 1] = aux;
+					aux = vetor[j - 1];
+					vetor[j - 1] = vetor[j];
+					vetor[j] = aux;
+					
 					
 				}
 			}
