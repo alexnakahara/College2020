@@ -30,20 +30,21 @@ public class Tabuada extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter saida  = response.getWriter();
+		response.setContentType("text/html");
 
-
+		StringBuilder builder = new StringBuilder();
+		builder.append("<center><table border=1 cellspacing=0 cellpadding = 0>");
 		for(int i = 1; i <= 10; i++){
-
+			builder.append("<tr><th style='text-align:center'> Tabuada do " + i + "</th></tr>");
 		    for(int a = 0; a <= 10; a++){
-
-		    	saida.println(i + "x" + a + "=" + i * a + "<br>");
-		    	if(a == 10) {
-		    		saida.println("_______________" + "<br>");
-		    	}
-
+		    	builder.append("<tr><td style='text-align:center'>");
+		    	builder.append(i + "x" + a + "=" + i * a);
+		    	builder.append("</td></tr>");
 		    }
 		    
 		}
+		builder.append("</table></center>");
+		saida.println(builder.toString());
 	}
 
 }

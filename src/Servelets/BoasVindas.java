@@ -23,15 +23,17 @@ public class BoasVindas extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter saida  = response.getWriter();
+		String nome = request.getParameter("name");
 		
-		saida.println("Hello Word!!");
+		if(!nome.isEmpty()) {
+			saida.println("Olaá, " + nome + "!");
+		} else {
+			saida.println("Volte e informe o seu nome!");
+		}
 		
 	}
 
