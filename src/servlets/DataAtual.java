@@ -1,7 +1,10 @@
-package servelets;
+package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,16 +13,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Tabuada
+ * Servlet implementation class DataAtual
  */
-@WebServlet("/Tabuada.do")
-public class Tabuada extends HttpServlet {
+@WebServlet("/DataAtual.do")
+public class DataAtual extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Tabuada() {
+    public DataAtual() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,23 +31,12 @@ public class Tabuada extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+		Calendar calobj = Calendar.getInstance();
 		
-		PrintWriter saida  = response.getWriter();
 		response.setContentType("text/html");
-
-		StringBuilder builder = new StringBuilder();
-		builder.append("<center><table border=1 cellspacing=0 cellpadding = 0>");
-		for(int i = 1; i <= 10; i++){
-			builder.append("<tr><th style='text-align:center'> Tabuada do " + i + "</th></tr>");
-		    for(int a = 0; a <= 10; a++){
-		    	builder.append("<tr><td style='text-align:center'>");
-		    	builder.append(i + "x" + a + "=" + i * a);
-		    	builder.append("</td></tr>");
-		    }
-		    
-		}
-		builder.append("</table></center>");
-		saida.println(builder.toString());
+		PrintWriter saida  = response.getWriter();
+		saida.println("<h2>Data atual</h2><br/>" + df.format(calobj.getTime()));
 	}
 
 }
