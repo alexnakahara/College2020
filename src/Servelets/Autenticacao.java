@@ -2,8 +2,6 @@ package Servelets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,15 +32,15 @@ public class Autenticacao extends HttpServlet {
 		response.setContentType("text/html");
 
 		if (nome.isEmpty() || senha.isEmpty()) {
-			response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			saida.println("<script>alert('Você deve preencher o login!')</script>Volte e tente novamente!");
 
 		} else if (nome.equals("joao@teste.com.br") && senha.equals("13579")) {
 			saida.println("<h2>Bem vindo!</h2>Login foi realizado!");
 			
 		} else {
+			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			saida.println("Você não tem acesso");
-			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 		}
 	}
 
