@@ -1,4 +1,4 @@
-package Servelets;
+package servelets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
