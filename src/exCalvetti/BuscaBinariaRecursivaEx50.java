@@ -3,7 +3,6 @@ package exCalvetti;
 import javax.swing.JOptionPane;
 
 public class BuscaBinariaRecursivaEx50 {
-	//Ta bugado olhar de novo
 	//c d a b k a f g a w
 	public static int search(char vetor[], int iB, int iA, char key) {
 
@@ -11,9 +10,9 @@ public class BuscaBinariaRecursivaEx50 {
 		if (iB <= iA) {
 
 			if (key < vetor[meio]) {
-				return search(vetor, iB, meio + 1, key);
+				return search(vetor, meio + 1, iA, key);
 			} else if (key > vetor[meio]) {
-				return search(vetor, meio - 1, iA, key);
+				return search(vetor,iB ,meio - 1 , key);
 			} else {
 				return meio;
 			}
