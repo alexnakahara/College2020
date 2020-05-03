@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 import javax.swing.*;
 
-public class PilhaEx3 {
+public class PilhaEx3Inversa {
 	public static int iTAM = 10;
 	public static char cPilha[] = new char[iTAM];
-	public static int iPos = 0;
+	public static int iPos = 10;
 	public static String sIO, sTitle;
 	public static String[] sSN = { "Sim", "Não" };
 	public static int iSN;
@@ -15,6 +15,7 @@ public class PilhaEx3 {
 	public static int iOpcao;
 
 	public static void main(String Args[]) {
+		// Tela inicial
 		sTitle = "ALGED-Ex03-2°Semestre";
 		sIO = "Pilhas - Stack";
 		JOptionPane.showMessageDialog(null, sIO, sTitle, JOptionPane.PLAIN_MESSAGE);
@@ -41,7 +42,8 @@ public class PilhaEx3 {
 				break;
 			}
 		} while (iOpcao != 3);
-			System.exit(0);
+		
+		System.exit(0);
 	}
 
 	public static void Inserir_Elemento() {
@@ -54,6 +56,7 @@ public class PilhaEx3 {
 			sIO = "Pilha Cheia. Caractere não colocado na Pilha!";
 		else
 			sIO = "Caractere colocado na Pilha com sucesso!";
+		System.out.println("Array --- " + Arrays.toString(cPilha));
 		JOptionPane.showMessageDialog(null, sIO, sTitle, JOptionPane.PLAIN_MESSAGE);
 	}
 
@@ -61,7 +64,7 @@ public class PilhaEx3 {
 		int iTamanho;
 		char cCaractere;
 		iTamanho = Size();
-		if (iTamanho == 0)
+		if (iTamanho == 10)
 			sIO = "Pilha Vazia!";
 		else {
 			cCaractere = Top();
@@ -71,30 +74,33 @@ public class PilhaEx3 {
 	}
 
 	public static void Retirar_Elemento() {
-				char cCaractere;
-				cCaractere=Pop();
-				if(cCaractere==0) sIO="Pilha Vazia!";
-				else sIO="Caractere retirado da Pilha: "+cCaractere;
-				JOptionPane.showMessageDialog(null,sIO,sTitle,JOptionPane.PLAIN_MESSAGE);
-			}
+		char cCaractere;
+		cCaractere = Pop();
+		if (cCaractere == 10)
+			sIO = "Pilha Vazia!";
+		else
+			sIO = "Caractere retirado da Pilha: " + cCaractere;
+		JOptionPane.showMessageDialog(null, sIO, sTitle, JOptionPane.PLAIN_MESSAGE);
+	}
 
-	public static char Push(char cC){
-				if(iPos>=iTAM) return 0;
-				
-				System.out.println("pilaa" + Arrays.toString(cPilha));
-				return cPilha[iPos++]=cC;
-			}
+	public static char Push(char cC) {
+		if (iPos <= 0)
+			return 0;
+		return cPilha[--iPos] = cC;
+	}
 
-	public static char Pop(){
-				if(iPos==0) return 0;
-				return cPilha[--iPos];
-			}
+	public static char Pop() {
+		if (iPos == 10)
+			return 0;
 
-	public static int Size(){
-				return iPos;
-			}
+		return cPilha[++iPos];
+	}
 
-	public static char Top(){
-				return cPilha[iPos-1];
-			}
+	public static int Size() {
+		return iPos;
+	}
+
+	public static char Top() {
+		return cPilha[iPos];
+	}
 }
