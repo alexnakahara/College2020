@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.util.Arrays;
 
 public class PilhaEx7Inversa {
-	
 	public static int iTAM = 10;
 	public static String cPilha[] = new String[iTAM];
 	public static int iPos = 10;
@@ -26,13 +25,13 @@ public class PilhaEx7Inversa {
 					null);
 			switch (iOpcao) {
 			case 0:
-				Inserir_Nome();
+				InserirNome();
 				break;
 			case 1:
 				ConsultarNome();
 				break;
 			case 2:
-				Retirar_Nome();
+				RetirarNome();
 				break;
 			case 3:
 				sIO = "Deseja realmente sair?";
@@ -46,7 +45,7 @@ public class PilhaEx7Inversa {
 		System.exit(0);
 	}
 
-	private static void Inserir_Nome() {
+	private static void InserirNome() {
 		// TODO Auto-generated method stub
 		String sDigitado;
 		sIO = "Digite o Nome a ser colocado na Pilha:";
@@ -72,7 +71,7 @@ public class PilhaEx7Inversa {
 		JOptionPane.showMessageDialog(null, sIO, sTitle, JOptionPane.PLAIN_MESSAGE);
 	}
 
-	public static void Retirar_Nome() {
+	public static void RetirarNome() {
 		String text;
 		text = Pop();
 		if (text == null)
@@ -80,7 +79,6 @@ public class PilhaEx7Inversa {
 		else
 			sIO = "Nome retirado da Pilha: " + text;
 		JOptionPane.showMessageDialog(null, sIO, sTitle, JOptionPane.PLAIN_MESSAGE);
-		System.out.println("Array delete--> " + Arrays.toString(cPilha));
 	}
 
 	private static String Push(String sC) {
@@ -95,7 +93,6 @@ public class PilhaEx7Inversa {
 		String nome = cPilha[iPos];
 		cPilha[iPos] = null;
 		iPos += 1;
-		System.out.println("++ no dee=lete" + iPos);
 		return nome;
 	}
 

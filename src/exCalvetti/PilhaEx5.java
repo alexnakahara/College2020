@@ -15,7 +15,7 @@ public class PilhaEx5 {
 
 	public static void main(String Args[]) {
 		// Tela inicial
-		sTitle = "ALGED-Ex05-2°.Semestre";
+		sTitle = "ALGED-Ex05-2°Semestre";
 		sIO = "Pilhas - Stack";
 		JOptionPane.showMessageDialog(null, sIO, sTitle, JOptionPane.PLAIN_MESSAGE);
 		// Tela de menu
@@ -87,7 +87,7 @@ public class PilhaEx5 {
 		String op;
 		for (int i = 0; i < 4; i++) {
 
-			op = JOptionPane.showInputDialog(null, "Qual operação deseja(+,    -,   /,    *)?");
+			op = JOptionPane.showInputDialog(null, "Qual operação deseja(+ ,  -,  /, *)?");
 
 			switch (op) {
 			case "+":
