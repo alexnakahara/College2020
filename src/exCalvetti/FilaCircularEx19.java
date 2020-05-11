@@ -86,10 +86,7 @@ public class FilaCircularEx19 {
 		cFila[--iSPos] = cC;
 		if (iSPos == 4)
 			Operacao(iSPos);
-		if (iSPos == 0)
-			iSPos = 10;
-		if (iSPos == iRPos)
-			bQueueFull = true;
+
 	}
 
 	private static void Operacao(int posi) {
