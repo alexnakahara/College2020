@@ -80,8 +80,7 @@ public class PilhaEx5Inversa {
 
 	private static void Operacao(int posi) {
 
-		int aux = 0;
-		int glbResult = 0, cont = 0;
+		int glbResult = 0, aux = 0 ;
 		String op;
 		for (int i = 0; i < 4; i++) {
 
@@ -94,9 +93,9 @@ public class PilhaEx5Inversa {
 					glbResult = cPilha[posi] + cPilha[posi + 1];
 					cPilha[posi - aux] = glbResult;
 				} else {
-					cont = glbResult += cPilha[posi + (aux += 1)];
+					glbResult += cPilha[posi + (aux += 1)];
 					System.out.println("ta valendo -- no mais" + aux);
-					cPilha[posi - aux] = cont;
+					cPilha[posi - aux] = glbResult;
 				}
 				--iPos;
 				JOptionPane.showMessageDialog(null, Arrays.toString(cPilha));
@@ -108,9 +107,9 @@ public class PilhaEx5Inversa {
 					glbResult = cPilha[posi] - cPilha[posi + 1];
 					cPilha[posi - aux] = glbResult;
 				} else {
-					cont = glbResult -= cPilha[posi + (aux += 1)];
+					glbResult -= cPilha[posi + (aux += 1)];
 					System.out.println("ta valendo -- no menos " + aux);
-					cPilha[posi - aux] = cont;
+					cPilha[posi - aux] = glbResult;
 				}
 				--iPos;
 				JOptionPane.showMessageDialog(null, Arrays.toString(cPilha));
@@ -120,12 +119,12 @@ public class PilhaEx5Inversa {
 				if (i == 0) {
 					aux++;
 					glbResult = cPilha[posi] * cPilha[posi + 1];
-					cPilha[--posi] = glbResult;
+					cPilha[posi - aux] = glbResult;
 				} else {
 
-					cont = glbResult *= cPilha[posi + (aux += 1)];
+					glbResult *= cPilha[posi + (aux += 1)];
 					System.out.println("ta valendo -- no menos " + aux);
-					cPilha[posi - aux] = cont;
+					cPilha[posi - aux] = glbResult;
 
 				}
 				--iPos;
@@ -138,9 +137,9 @@ public class PilhaEx5Inversa {
 					glbResult = cPilha[posi] / cPilha[posi + 1];
 					cPilha[posi + aux] = glbResult;
 				} else {
-					cont = glbResult /= cPilha[posi + (aux += 1)];
+					glbResult /= cPilha[posi + (aux += 1)];
 					System.out.println("ta valendo -- no menos " + aux);
-					cPilha[posi - aux] = cont;
+					cPilha[posi - aux] = glbResult;
 
 				}
 				--iPos;
