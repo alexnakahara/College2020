@@ -146,7 +146,7 @@ public class FilaCircularEx19 {
 				if (i == 0) {
 					aux++;
 					glbResult = cFila[posi] / cFila[posi + 1];
-					cFila[posi + aux] = glbResult;
+					cFila[posi - aux] = glbResult;
 				} else {
 					glbResult /= cFila[posi + (aux += 1)];
 					cFila[posi - aux] = glbResult;

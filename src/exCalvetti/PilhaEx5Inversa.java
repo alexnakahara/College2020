@@ -47,7 +47,7 @@ public class PilhaEx5Inversa {
 
 		sIO = "Digite um número para ser colocado na Pilha:";
 		int sDigitado = Integer.parseInt(JOptionPane.showInputDialog(null, sIO, sTitle, JOptionPane.QUESTION_MESSAGE));
-		if (Push(sDigitado) == 0)
+		if (Push(sDigitado) <= 0)
 			sIO = "Pilha Cheia. Número não colocado na Pilha!";
 		else
 			sIO = "Número colocado na Pilha com sucesso!";
@@ -94,7 +94,6 @@ public class PilhaEx5Inversa {
 					cPilha[posi - aux] = glbResult;
 				} else {
 					glbResult += cPilha[posi + (aux += 1)];
-					System.out.println("ta valendo -- no mais" + aux);
 					cPilha[posi - aux] = glbResult;
 				}
 				--iPos;
@@ -108,7 +107,6 @@ public class PilhaEx5Inversa {
 					cPilha[posi - aux] = glbResult;
 				} else {
 					glbResult -= cPilha[posi + (aux += 1)];
-					System.out.println("ta valendo -- no menos " + aux);
 					cPilha[posi - aux] = glbResult;
 				}
 				--iPos;
@@ -121,11 +119,8 @@ public class PilhaEx5Inversa {
 					glbResult = cPilha[posi] * cPilha[posi + 1];
 					cPilha[posi - aux] = glbResult;
 				} else {
-
 					glbResult *= cPilha[posi + (aux += 1)];
-					System.out.println("ta valendo -- no menos " + aux);
 					cPilha[posi - aux] = glbResult;
-
 				}
 				--iPos;
 				JOptionPane.showMessageDialog(null, Arrays.toString(cPilha));
@@ -135,12 +130,10 @@ public class PilhaEx5Inversa {
 				if (i == 0) {
 					aux++;
 					glbResult = cPilha[posi] / cPilha[posi + 1];
-					cPilha[posi + aux] = glbResult;
+					cPilha[posi - aux] = glbResult;
 				} else {
 					glbResult /= cPilha[posi + (aux += 1)];
-					System.out.println("ta valendo -- no menos " + aux);
 					cPilha[posi - aux] = glbResult;
-
 				}
 				--iPos;
 				JOptionPane.showMessageDialog(null, Arrays.toString(cPilha));
@@ -152,14 +145,13 @@ public class PilhaEx5Inversa {
 	}
 
 	private static int Push(int iC) {
-		if (iPos == 0)
-			return 0;
-
+		
+		if (iPos == 0) return 0;
+		
 		int posi = --iPos;
 		int result = cPilha[posi] = iC;
 
-		if (iPos == 4)
-			Operacao(posi);
+		if (iPos == 4) Operacao(posi);
 
 		return result;
 	}
